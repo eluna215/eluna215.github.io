@@ -963,6 +963,38 @@
           gap: 9px;
         }
       }
+
+      /* Align service headings, descriptions, and tags across all three columns. */
+      .services {
+        column-gap: 27px;
+        row-gap: 0;
+      }
+      .service {
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: span 4;
+      }
+      .service p {
+        align-self: start;
+      }
+      @media (max-width: 680px) {
+        .services {
+          row-gap: 30px;
+        }
+        .service {
+          display: block;
+          grid-row: auto;
+        }
+      }
+      /* Keep every navigation link accessible on small screens. */
+      @media (max-width: 680px) {
+        body { padding-top: 125px; }
+        nav { height: auto; min-height: 115px; flex-direction: column; justify-content: center; gap: 12px; padding-top: 12px; padding-bottom: 12px; }
+        .links { width: 100%; justify-content: space-between; gap: 6px; }
+        .links .nav-extra { display: inline-flex; }
+        .links > a { font-size: 11px; white-space: nowrap; }
+        html { scroll-padding-top: 135px; }
+      }
     </style>
   </head>
   <body>
@@ -972,11 +1004,11 @@
       <nav aria-label="Main navigation">
         <a class="brand" href="#">emmitt luna<span>.</span></a>
         <div class="links">
-          <a class="nav-extra" href="#services">Services</a
-          ><a class="nav-extra" href="#experience">Experience</a
-          ><a class="projects-nav" href="#projects">Projects</a
-          ><a class="small-cta" href="#contact">Let’s talk ↗</a
-          ><a class="about-nav" href="#about">About Me</a>
+          <a class="nav-extra" href="#services">Services</a>
+          <a class="nav-extra" href="#experience">Experience</a>
+          <a class="small-cta" href="#contact">Let’s talk ↗</a>
+          <a class="about-nav" href="#about">About Me</a>
+          <a class="projects-nav" href="#projects">Projects</a>
         </div>
       </nav>
       <main id="main">
@@ -1037,7 +1069,7 @@
           <div class="services">
             <article class="service">
               <span class="number">01 / CONNECT</span>
-              <h3>Trading partner<br />integrations</h3>
+              <h3>Integrations</h3>
               <p>
                 Connect partners who use EDI and APIs. Help configuring
                 endpoints, testing data exchanges, and coordinating the details
@@ -1049,10 +1081,10 @@
             </article>
             <article class="service">
               <span class="number">02 / TRANSFORM</span>
-              <h3>EDI mapping &<br />data transformation</h3>
+              <h3>Data Transformation</h3>
               <p>
-                Turn incoming data into the format your systems need. Hands-on
-                Cleo Studio, or Python transformation work across EDI, flat
+                Map inbound and outbound data into the format your systems need. Using
+                Cleo Studio, or Python transformations across EDI, flat
                 files, JSON, XML with SQL validation and Managed Systems
                 testing.
               </p>
@@ -1062,11 +1094,11 @@
             </article>
             <article class="service">
               <span class="number">03 / SUPPORT</span>
-              <h3>Troubleshooting &<br />production support</h3>
+              <h3>Production Support</h3>
               <p>
                 Trace transaction issues, investigate endpoint errors, and
-                improve visibility. Document the solution so your team can
-                support the integration with clarity.
+                improve visibility. Automate process and document the solution so your team can
+                support the integration with clarity. Can also provide training sessions.
               </p>
               <div class="tags">
                 <span>New Relic</span><span>Postman</span><span>SOPs</span>
@@ -1186,24 +1218,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <!-- PROJECTS: add future project links in this section -->
-      <section
-        class="section projects"
-        id="projects"
-        aria-labelledby="projects-title"
-      >
-        <div class="section-head">
-          <h2 class="section-title" id="projects-title">Projects</h2>
-        </div>
-        <div class="projects-placeholder">
-          <span class="eyebrow">Coming soon</span>
-          <h3>More of what I’m building.</h3>
-          <p>
-            A place for my other projects, with links to explore each one as
-            they’re added.
-          </p>
         </div>
       </section>
       <!-- CONTACT: form fields, email destination, phone, and LinkedIn -->
@@ -1371,6 +1385,25 @@
           </div>
         </div>
       </section>
+
+      <!-- PROJECTS: add future project links in this section -->
+      <section
+        class="section projects"
+        id="projects"
+        aria-labelledby="projects-title"
+      >
+        <div class="section-head">
+          <h2 class="section-title" id="projects-title">Projects</h2>
+        </div>
+        <div class="projects-placeholder">
+          <span class="eyebrow">Coming soon</span>
+          <h3>More of what I’m building.</h3>
+          <p>
+            A place for my other projects, with links to explore each one as
+            they’re added.
+          </p>
+        </div>
+      </section>
       <!-- FOOTER -->
       <footer>
         <span class="brand" style="font-size: 16px; color: #e4eae5"
@@ -1417,3 +1450,5 @@
     </script>
   </body>
 </html>
+
+
