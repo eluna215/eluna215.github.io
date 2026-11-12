@@ -219,12 +219,24 @@
         background: #8ba36b;
         position: relative;
       }
-      .connector:after {
-        content: "›";
+      /* Arrowheads at both ends show two-way data exchange. */
+      .connector::before,
+      .connector::after {
+        content: "";
         position: absolute;
-        right: -1px;
-        top: -14px;
-        color: var(--lime);
+        top: 50%;
+        width: 6px;
+        height: 6px;
+        border-top: 1px solid var(--lime);
+        border-right: 1px solid var(--lime);
+      }
+      .connector::before {
+        left: 0;
+        transform: translateY(-50%) rotate(-135deg);
+      }
+      .connector::after {
+        right: 0;
+        transform: translateY(-50%) rotate(45deg);
       }
       .sample {
         font:
@@ -1015,13 +1027,13 @@
         <!-- INTRODUCTION: edit your headline and opening paragraph here -->
         <section class="hero">
           <div>
-            <div class="eyebrow">Independent EDI & integration consulting</div>
+            <div class="eyebrow">Integration Consulting</div>
             <h1>
               Get your systems<br />speaking the<br /><em>same language.</em>
             </h1>
             <p class="intro">
               I’m Emmitt Luna. I help teams connect trading partners, transform
-              EDI data, and keep critical integrations moving.
+               data, and keep critical integrations moving.
             </p>
             <div class="actions">
               <a class="button" href="#contact"
@@ -1035,7 +1047,7 @@
             aria-label="Illustrative integration flow from trading partner through EDI mapping to an endpoint"
           >
             <div class="diagram-top">
-              <span>CONNECTED, END TO END</span><b>EDI / API</b>
+              <span>CONNECT, END TO END</span>
             </div>
             <div class="flow">
               <div class="node"><strong>↗</strong>Trading partner</div>
@@ -1050,7 +1062,7 @@
               troubleshoot
             </div>
             <div class="diagram-bottom">
-              <span>AS2 · SFTP · API</span><span>Illustrative workflow</span>
+              <span>AS2 · SFTP · API · B2B</span>
             </div>
           </div>
         </section>
